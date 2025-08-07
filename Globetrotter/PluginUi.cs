@@ -1,4 +1,4 @@
-﻿using ImGuiNET;
+﻿using Dalamud.Bindings.ImGui;
 using System.Numerics;
 
 namespace Globetrotter {
@@ -64,7 +64,7 @@ namespace Globetrotter {
         private static bool HelpCheckbox(string label, string help, ref bool isChecked) {
             var ret = ImGui.Checkbox(label, ref isChecked);
 
-            ImGui.TreePush();
+            ImGui.TreePush("GlobetrotterConfigUI");
             ImGui.PushTextWrapPos();
             ImGui.TextUnformatted(help);
             ImGui.PopTextWrapPos();

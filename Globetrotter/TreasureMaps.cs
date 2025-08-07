@@ -64,7 +64,7 @@ namespace Globetrotter {
             this._acsHook = this.Plugin.GameInteropProvider.HookFromAddress<HandleActorControlSelfDelegate>(acsPtr, this.OnACS);
             this._acsHook.Enable();
 
-            var showMapPtr = this.Plugin.SigScanner.ScanText("E8 ?? ?? ?? ?? 40 84 FF 0F 85 ?? ?? ?? ?? 48 8B 0D");
+            var showMapPtr = this.Plugin.SigScanner.ScanText("E8 ?? ?? ?? ?? 44 0F B7 C0 45 33 C9 0F B7 D3");
             this._showMapHook = this.Plugin.GameInteropProvider.HookFromAddress<ShowTreasureMapDelegate>(showMapPtr, this.OnShowMap);
             this._showMapHook.Enable();
         }
